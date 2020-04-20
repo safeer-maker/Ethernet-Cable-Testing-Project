@@ -18,6 +18,37 @@ int out7 = 11;
 int out8 = 12;
 /////////////////////////
 int temp = 0;
+int count = 0;
+bool pins [8] = {false};
+int sequence [8] = {0};
+/////////////////////////
+void pin_low(int pin = 0){
+    digitalWrite(out1,HIGH);
+    digitalWrite(out2,HIGH);
+    digitalWrite(out3,HIGH);
+    digitalWrite(out4,HIGH);
+    digitalWrite(out5,HIGH);
+    digitalWrite(out6,HIGH);
+    digitalWrite(out7,HIGH);
+    digitalWrite(out8,HIGH);
+    delay(50);
+    Serial.print ("Pin_low pin is ");Serial.println(pin);
+    digitalWrite(pin,LOW);
+    
+}
+
+void data_read (){
+  count ++;
+  Serial.print("In data_read function");
+    if (!digitalRead(pin7))
+    {
+      Serial.print("Data_read pin ");Serial.print(6+1);Serial.print(" is LOW");
+      pins[6] = true;
+      sequence[6] = count;
+    }
+    
+}
+
 
 void setup() {
   // put your setup code here, to run once:
@@ -44,5 +75,16 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  delay(100);
+  pin_low(out7);
+  data_read();
+
+  Serial.println ("\npins");  
+  for (int x = 0;  x < 8; x++)
+    Serial.print(pins[x]);
+    
+  Serial.println ("\nSequence");
+  for (int x = 0;  x < 8; x++)
+    Serial.print(sequence[x]);
+  while (true)
+  delay(1000);
 }
