@@ -40,13 +40,13 @@ void pin_low(int pin = 0){
 void data_read (){
   count ++;
   Serial.print("In data_read function");
-    if (!digitalRead(pin7))
+  for (int x = 0; x < 8; x++)  
+    if (!digitalRead(2+x))
     {
-      Serial.print("Data_read pin ");Serial.print(6+1);Serial.print(" is LOW");
-      pins[6] = true;
-      sequence[6] = count;
+      Serial.print("Data_read pin ");Serial.print(x+1);Serial.print(" is LOW");
+      pins[x] = true;
+      sequence[x] = count;
     }
-    
 }
 
 
@@ -75,8 +75,31 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
+  pin_low(out1);
+  data_read();
+
+  pin_low(out2);
+  data_read();
+
+  pin_low(out3);
+  data_read();
+
+  pin_low(out4);
+  data_read();
+
+  pin_low(out5);
+  data_read();
+
+  pin_low(out6);
+  data_read();
+
   pin_low(out7);
   data_read();
+
+  pin_low(out8);
+  data_read();
+
+  
 
   Serial.println ("\npins");  
   for (int x = 0;  x < 8; x++)
