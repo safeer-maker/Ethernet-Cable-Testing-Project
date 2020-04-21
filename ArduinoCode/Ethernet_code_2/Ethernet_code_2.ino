@@ -1,4 +1,4 @@
-//////////////////////////
+/////////////////////////
 int pin1 = 2;
 int pin2 = 3;
 int pin3 = 4;
@@ -8,14 +8,14 @@ int pin6 = 7;
 int pin7 = 8;
 int pin8 = 9;
 
-int out1 = A5;
-int out2 = A4;
-int out3 = A3;
-int out4 = A2;
-int out5 = A1;
-int out6 = A0;
-int out7 = 11;
-int out8 = 12;
+int out1 = A7;
+int out2 = A6;
+int out3 = A5;
+int out4 = A4;
+int out5 = A3;
+int out6 = A2;
+int out7 = A1;
+int out8 = A0;
 /////////////////////////
 int temp = 0;
 int count = 0;
@@ -31,7 +31,7 @@ void pin_low(int pin = 0){
     digitalWrite(out6,HIGH);
     digitalWrite(out7,HIGH);
     digitalWrite(out8,HIGH);
-    delay(50);
+    delay(10);
     Serial.print ("Pin_low pin is ");Serial.println(pin);
     digitalWrite(pin,LOW);
     
