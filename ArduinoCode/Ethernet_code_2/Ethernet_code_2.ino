@@ -1,21 +1,21 @@
 /////////////////////////
-int pin1 = 2;
-int pin2 = 3;
-int pin3 = 4;
-int pin4 = 5;
-int pin5 = 6;
-int pin6 = 7;
-int pin7 = 8;
-int pin8 = 9;
+int pin1 = 21;
+int pin2 = 20;
+int pin3 = 19;
+int pin4 = 18;
+int pin5 = 17;
+int pin6 = 16;
+int pin7 = 15;
+int pin8 = 14;
 
-int out1 = A7;
-int out2 = A6;
-int out3 = A5;
-int out4 = A4;
-int out5 = A3;
-int out6 = A2;
-int out7 = A1;
-int out8 = A0;
+int out1 = 2;
+int out2 = 3;
+int out3 = 4;
+int out4 = 5;
+int out5 = 6;
+int out6 = 7;
+int out7 = 8;
+int out8 = 9;
 /////////////////////////
 int temp = 0;
 int count = 0;
@@ -32,18 +32,18 @@ void pin_low(int pin = 0){
     digitalWrite(out7,HIGH);
     digitalWrite(out8,HIGH);
     delay(10);
-    Serial.print ("Pin_low pin is ");Serial.println(pin);
+    Serial.print ("\nPin_low pin is ");Serial.println(pin);
     digitalWrite(pin,LOW);
     
 }
 
 void data_read (){
   count ++;
-  Serial.print("In data_read function");
+  Serial.print("\nIn data_read function");
   for (int x = 0; x < 8; x++)  
-    if (!digitalRead(2+x))
+    if (analogRead(21-x) < 200)
     {
-      Serial.print("Data_read pin ");Serial.print(x+1);Serial.print(" is LOW");
+      Serial.print("\nData_read pin ");Serial.print(x+1);Serial.print(" is LOW");
       pins[x] = true;
       sequence[x] = count;
     }

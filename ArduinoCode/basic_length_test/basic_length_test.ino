@@ -1,5 +1,5 @@
 int pin1 = 3;
-int pin2 = 10;
+int pin2 = A6;
 int count = 0;
 void setup() {
   // put your setup code here, to run once:
@@ -12,7 +12,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   delay(100);
   Serial.print("Value on PIN is ");
-  Serial.println(digitalRead(pin2));
+  Serial.println(analogRead(pin2));
   count++;
 
   if(count > 4)
