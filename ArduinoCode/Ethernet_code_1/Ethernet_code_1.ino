@@ -1,21 +1,21 @@
 //////////////////////////
-int pin1 = 2;
-int pin2 = 3;
-int pin3 = 4;
-int pin4 = 5;
-int pin5 = 6;
-int pin6 = 7;
-int pin7 = 8;
-int pin8 = 9;
+int pin1 = 14;
+int pin2 = 15;
+int pin3 = 16;
+int pin4 = 17;
+int pin5 = 18;
+int pin6 = 19;
+int pin7 = 20;
+int pin8 = 21;
 
-int out1 = A5;
-int out2 = A4;
-int out3 = A3;
-int out4 = A2;
-int out5 = A1;
-int out6 = A0;
-int out7 = 11;
-int out8 = 12;
+int out1 = 2;
+int out2 = 3;
+int out3 = 4;
+int out4 = 5;
+int out5 = 6;
+int out6 = 7;
+int out7 = 8;
+int out8 = 9;
 /////////////////////////
 int temp = 0;
 
@@ -43,7 +43,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if (temp == 4){
+ /* if (temp == 4){
     digitalWrite(out1,HIGH);
     digitalWrite(out2,HIGH);
     digitalWrite(out3,HIGH);
@@ -66,16 +66,24 @@ void loop() {
     digitalWrite(out8,LOW);
     
   }
-
-  Serial.print(digitalRead(pin1));
-  Serial.print(digitalRead(pin2));
-  Serial.print(digitalRead(pin3));
-  Serial.print(digitalRead(pin4));
-  Serial.print(digitalRead(pin5));
-  Serial.print(digitalRead(pin6));
-  Serial.print(digitalRead(pin7));
-  Serial.println(digitalRead(pin8));
-  Serial.println(temp);
+*/
+  Serial.print(analogRead(pin1));
+  Serial.print("  ");
+  Serial.print(analogRead(pin2));
+  Serial.print("  ");
+  Serial.print(analogRead(pin3));
+  Serial.print("  ");
+  Serial.print(analogRead(pin4));
+  Serial.print("  ");
+  Serial.print(analogRead(pin5));
+  Serial.print("  ");
+  Serial.print(analogRead(pin6));
+  Serial.print("  ");
+  Serial.print(analogRead(pin7));
+  Serial.print("  ");
+  Serial.print(analogRead(pin8));
+  Serial.print("  \n");
+//  Serial.println(temp);
   
   temp++;
   delay(100);
